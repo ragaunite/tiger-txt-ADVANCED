@@ -1,6 +1,6 @@
 # txt uploader
 
-# Made By TIGER
+# Made By GREEN HORN
 
 
 ## DEPLOY TO HEROKU
