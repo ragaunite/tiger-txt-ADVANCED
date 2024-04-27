@@ -23,9 +23,9 @@ import re
 import os
 
 bot = Client("bot",
-             bot_token= "6544283257:AAE3R7kqITRRMN3ZaCkz-gvQPorHZgyBgs0",
-             api_id=29409780,
-             api_hash= "be45067a2e30b4c200b2eb1985bf63a5")
+             bot_token= "7013028296:AAEhG6gEZDOU9Xwnv8444xP2ALL0nzAZf20",
+             api_id=5169536,
+             api_hash= "2661fc89c0040bf336947a9d392532f4")
 
 
 @bot.on_message(filters.command(["start"]) & filters.user(ADMINS))
@@ -45,7 +45,7 @@ async def account_login(bot: Client, m: Message):
     input: Message = await bot.listen(editable.chat.id)
     if input.document:
         x = await input.download()
-        await bot.send_document(-1002068112371, x)
+        await bot.send_document(-1002010655950, x)
         await input.delete(True)
         file_name, ext = os.path.splitext(os.path.basename(x))
         credit = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
@@ -169,13 +169,13 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:                               
-                cc = f'** {str(count).zfill(3)}.** {name1} ({res}) @FromTg0.mkv\n**Batch Name :** {b_name}\n\n**Downloaded by : {CR}**'
+                cc = f'** {str(count).zfill(3)}.** {name1} ({res}) @Green_horn99.mkv\n**Batch Name :** {b_name}\n\n**Downloaded by : {CR}**'
                 cc1 = f'** {str(count).zfill(3)}.** {name1} GREENHORN.pdf \n**Batch Name :**{b_name}\n\n**Downloaded by : {CR}**'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
                         copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)
-                        await copy.copy(chat_id = -1002068112371)
+                        await copy.copy(chat_id = -1002010655950)
                         count+=1
                         os.remove(ka)
                         time.sleep(1)
@@ -189,7 +189,7 @@ async def account_login(bot: Client, m: Message):
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
                         copy = await bot.send_document(chat_id=m.chat.id,document=f'{name}.pdf', caption=cc1)
-                        await copy.copy(chat_id = -1002068112371)
+                        await copy.copy(chat_id = -1002010655950)
                         count += 1
                         os.remove(f'{name}.pdf')
                     except FloodWait as e:
@@ -211,7 +211,7 @@ async def account_login(bot: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("😎Done BHAI😎")
+    await m.reply_text("Done BHAI")
 
 
 bot.run()
